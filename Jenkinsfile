@@ -10,15 +10,16 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("shubh4527/nodeapp")
+//         app = docker.build("shubh4527/nodeapp")
+	    sh 'docker build . -t shubh4527/nodeapp'
     }
 
-    stage('Test image') {
+//     stage('Test image') {
         
-        app.inside {
-            echo "Tests passed"
-        }
-    }
+//         app.inside {
+//             echo "Tests passed"
+//         }
+//     }
 
     stage('Push image') {
         /* 
